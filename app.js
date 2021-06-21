@@ -5,6 +5,7 @@ const app = express();
 
 app.use('/public',express.static(path.join(__dirname,'static')));
 app.use(express.static(__dirname + '/views'));
+app.use(express.urlencoded({extended:false}))
 
 app.set('view engine','ejs');
 
@@ -13,8 +14,7 @@ app.get('/',(req,res)=>{
 });
 
 app.get('/api/movies',(req,res)=>{
-    console.log({success:true, data:movies})
-    res.send(req.url)
+    res.send(req.query)
 });
 
 app.get('/api/movies/:id',(req,res)=>{

@@ -5,17 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/index.css">
+    <!-- <link rel="stylesheet" href="index.css"> -->
     <title>Document</title>
 </head>
 <body>
     
-    <header>AVAILABLE MOVIES</header>
+    <header>
+      <h1>AVAILABLE MOVIES</h1>
+    </header>
 
-    <script
+    <section class="search-section">
+      <form action="/api/movies" action="GET">
+        <label for="search">Search Genre</label>
+        <input type="text" name="genre" id="input-search" required>
+        <button type="submit">Search</button>
+      </form>
+    </section>
+
+    <!-- <script
       src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
       integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
       crossorigin="anonymous"
-    ></script>
+    ></script> -->
     <!-- <script type="text/javascript" src="/public/index.js" ></script> -->
 </body>
 </html>
