@@ -13,7 +13,8 @@ app.get('/',(req,res)=>{
 });
 
 app.get('/api/movies',(req,res)=>{
-    res.json({success:true, data:movies})
+    console.log({success:true, data:movies})
+    res.send(req.url)
 });
 
 app.get('/api/movies/:id',(req,res)=>{
