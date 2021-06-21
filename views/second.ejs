@@ -4,12 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/second.css">
     <title>Document</title>
 </head>
 <body>
+
+    <header>
+        <h1>AVAILABLE MOVIES</h1>
+    </header>
     
-    <h1>second ejs id: <%= data.userParams %></h1>
+    <section class="search-section">
+
+        <form action="/movies" action="GET">
+          <label for="search">Search Genre</label>
+          <input type="text" name="genre" id="input-search" required>
+          <button type="submit">Search</button>
+          
+          <div class="movies-list">
+              <label id="movie-lbl">MOVIE LISTS </label>
+          </div>
+  
+        </form>
+        
+      </section>
     
 </body>
 </html>

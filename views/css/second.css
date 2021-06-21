@@ -18,6 +18,7 @@ header h1{
     left:37%;
     color:#f2f2f2;
 }
+
 .search-section{
     position: relative;
     width:30%;
@@ -41,24 +42,8 @@ header h1{
 .search-section form .movies-list #movie-lbl{
     position: absolute;
     top:3%;
-    left:15%;
+    left:30%;
     letter-spacing: 2px;
     font-size: 1.5vw;
     font-weight: bold;
-}
-
-.search-section form .movies-list #nav{
-    position: absolute;
-    top:10%;
-    left:10%;
-    letter-spacing: 2px;
-    font-size: 1.2vw;
-    font-weight: bold;
-}
-
-.search-section form .movies-list .movies-show{
-    position: absolute;
-    top:15%;
-    left:9%;
-    width:90%;
 }

@@ -5,12 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/index.css">
+    <!-- <link rel="stylesheet" href="index.css"> -->
     <title>Document</title>
 </head>
 <body>
     
-    <h1>index ejs</h1>
-    
+    <header>
+      <h1>AVAILABLE MOVIES</h1>
+    </header>
+    <section class="search-section">
+
+      <form action="/movies" action="GET">
+        <label for="search">Search Genre</label>
+        <input type="text" name="genre" id="input-search" required>
+        <button type="submit" id="search-btn">Search</button>
+        
+        <div class="movies-list">
+            <label id="movie-lbl">MOVIE LISTS <%= filter %></label>
+            <label id="nav">ID.....TITLE.....YEAR</label>
+            <div class="movies-show">
+              <% if(movies){ %>
+                <% movies.forEach(elem => { %>
+                  <label>  <%= elem.id %>.. <%= elem.title %>...  <%= elem.year %></label><br>
+                <% }) %>
+              <% }%>
+          </div>
+        </div>
+        
+      </form>
+      
+    </section>
+    <!-- <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+      integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+      crossorigin="anonymous"
+    ></script> -->
     <script type="text/javascript" src="/js/index.js" ></script>
 </body>
 </html>

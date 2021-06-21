@@ -10,11 +10,25 @@ app.use(express.urlencoded({extended:false}))
 app.set('view engine','ejs');
 
 app.get('/',(req,res)=>{
-    res.sendFile(path.resolve('./static/index.html'))
+    res.render('index', {filter:'ALL', movies: movies})
 });
 
-app.get('/api/movies',(req,res)=>{
-    res.send(req.query)
+app.get('/movies',(req,res)=>{
+    const {genre} = req.query
+
+    let movieGenre = movies.filter(elem =>{
+        return elem.genre === genre.toUpperCase()
+    })
+
+    if(movieGenre.length < 1){
+        return res.status(400).send(`<h1 style="color:red"> Can't Find your Search Request </h1>
+                                    <a href="/"> Back </a>`)
+    }
+
+    return res.render('index' , {
+        filter : "Genre: " + genre,
+        movies : movieGenre
+    })
 });
 
 app.get('/api/movies/:id',(req,res)=>{
