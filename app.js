@@ -24,20 +24,21 @@ app.get('/movies',(req,res)=>{
         return res.status(400).send(`<h1 style="color:red"> Can't Find your Search Request </h1>
                                     <a href="/"> Back </a>`)
     }
-
     return res.render('index' , {
         filter : "Genre: " + genre,
         movies : movieGenre
     })
 });
 
-app.get('/api/movies/:id',(req,res)=>{
-    const movieID = movies.find(elem => elem.id === parseInt(req.params.id))
-    if(!movieID) return res.status(400).send(`No movie ID of ${req.params.id}`)
-    console.log(movieID)
-    res.render('second' , {data :{
-        userParams: req.params.id
-    }})
+app.get('/movies/:id',(req,res)=>{
+    let movieID = []
+    movieID.push(movies.find(elem => elem.id === parseInt(req.params.id)))
+    if(!movieID[0]) return res.status(400).send(`No movie ID of ${req.params.id}`)
+
+    return res.render('index' , {
+        filter : "ID: " + req.params.id,
+        movies : movieID
+    })
 });
 
 const port = process.env.PORT || 3000

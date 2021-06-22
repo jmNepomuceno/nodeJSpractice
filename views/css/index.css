@@ -19,17 +19,19 @@ header h1{
     color:#f2f2f2;
 }
 .search-section{
-    position: relative;
+    position: absolute;
+    left:5%;
     width:30%;
     height:720px;
+    border:1px solid black;
 }
 
-.search-section form{
+.search-section .movie-list-form{
     position: absolute;
     left:5%;
     height:720px;
 }
-.search-section form .movies-list{
+.search-section .movie-list-form .movies-list{
     position: absolute;
     top:5%;
     left:5%;
@@ -38,7 +40,7 @@ header h1{
     border:1px solid black;
 }
 
-.search-section form .movies-list #movie-lbl{
+.search-section .movie-list-form .movies-list #movie-lbl{
     position: absolute;
     top:3%;
     left:15%;
@@ -47,7 +49,7 @@ header h1{
     font-weight: bold;
 }
 
-.search-section form .movies-list #nav{
+.search-section .movie-list-form .movies-list #nav{
     position: absolute;
     top:10%;
     left:10%;
@@ -56,7 +58,84 @@ header h1{
     font-weight: bold;
 }
 
-.search-section form .movies-list .movies-show{
+.search-section .movie-list-form .movies-list .movies-show{
+    position: absolute;
+    top:15%;
+    left:9%;
+    width:90%;
+}
+
+/*  */
+.add-section{
+    position: absolute;
+    right:5%;
+    width:30%;
+    height:720px;
+    border: 1px solid gray;
+}
+
+.add-section .movie-add-form{
+    position: absolute;
+    width:100%;
+    height:720px;
+}
+
+.add-section .movie-add-form #add-lbl{
+    position: absolute;
+    top:0;
+    left:40%
+}
+.add-section .movie-add-form #input-title{
+    position: absolute;
+    top: 3%;
+    left:5%
+}
+.add-section .movie-add-form #input-year{
+    position: absolute;
+    top:3%;
+    left:55%
+}
+
+.add-section .movie-add-form #input-genre{
+    position: absolute;
+    top:8%;
+    left:5%
+}
+
+.add-section .movie-add-form #add-btn{
+    position: absolute;
+    top:8%;
+    left:55%;
+    width:30%;
+}
+.add-section .movie-add-form .movies-list{
+    position: absolute;
+    top:12%;
+    left:10%;
+    width:80%;
+    height:80%;
+    border:1px solid black;
+}
+
+.add-section .movie-add-form .movies-list #movie-lbl{
+    position: absolute;
+    top:3%;
+    left:15%;
+    letter-spacing: 2px;
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+
+.add-section .movie-add-form .movies-list #nav{
+    position: absolute;
+    top:10%;
+    left:10%;
+    letter-spacing: 2px;
+    font-size: 1.2vw;
+    font-weight: bold;
+}
+
+.add-section .movie-add-form .movies-list .movies-show{
     position: absolute;
     top:15%;
     left:9%;
