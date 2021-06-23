@@ -5,6 +5,7 @@ const app = express();
 
 app.use('/public',express.static(path.join(__dirname,'static')));
 app.use(express.static(__dirname + '/views'));
+
 app.use(express.urlencoded({extended:false}))
 
 app.set('view engine','ejs');
@@ -24,6 +25,15 @@ app.get('/movies',(req,res)=>{
         return res.status(400).send(`<h1 style="color:red"> Can't Find your Search Request </h1>
                                     <a href="/"> Back </a>`)
     }
+    return res.render('index' , {
+        filter : "Genre: " + genre,
+        movies : movieGenre
+    })
+});
+
+app.post('/movies',(req,res)=>{
+    console.log(req.body)
+
     return res.render('index' , {
         filter : "Genre: " + genre,
         movies : movieGenre

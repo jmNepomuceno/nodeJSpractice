@@ -16,7 +16,7 @@
 
     <section class="search-section">
 
-      <form action="/movies" action="GET" class="movie-list-form">
+      <form action="/movies" method="GET" class="movie-list-form">
         <label for="search">Search Genre</label>
         <input type="text" name="genre" id="input-search" required>
         <button type="submit" id="search-btn">Search</button>
@@ -42,15 +42,15 @@
 
     <section class="add-section">
 
-      <form action="/movies/add" action="POST" class="movie-add-form">
+      <form action="/movies" method="POST" class="movie-add-form">
         <label for="add" id="add-lbl">Add Movies</label>
-        <input type="text" name="title" id="input-title" required>
-        <input type="date" name="year" id="input-year" required>
-        <input type="text" name="genre" id="input-genre" required>
+        <input type="text" name="title" id="input-title" required placeholder="title">
+        <input type="text" name="year" id="input-year" required placeholder="year">
+        <input type="text" name="genre" id="input-genre" required placeholder="genre">
         <button type="submit" id="add-btn">Add</button>
 
         <div class="movies-list">
-          <label id="movie-lbl">MOVIE LISTS <%= filter %></label>
+          <!-- <label id="movie-lbl">MOVIE LISTS <%= filter %></label>
           <label id="nav">ID.....TITLE.....YEAR</label>
           <div class="movies-show">
             <% if(movies && movies.length > 1){ %>
@@ -60,7 +60,7 @@
             <% }%>
             <% if(movies && movies.length == 1){ %>
                 <label>  <%= movies[0].id %>.. <%= movies[0].title %>...  <%= movies[0].year %></label><br>
-            <% }%>
+            <% }%> -->
         </div>
       </div>
       
