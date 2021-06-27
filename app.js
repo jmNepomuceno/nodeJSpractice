@@ -32,12 +32,18 @@ app.get('/movies',(req,res)=>{
 });
 
 app.post('/movies',(req,res)=>{
-    console.log(req.body)
+    let newMovie = {id: movies.length + 1}
+    newMovie["title"] = req.body.title
+    newMovie["year"] = parseInt(req.body.year)
+    newMovie["genre"] = req.body.genre.toUpperCase()
+    movies.push(newMovie)
+    console.log(movies)
 
     return res.render('index' , {
-        filter : "Genre: " + genre,
-        movies : movieGenre
+        filter : "POST: ",
+        movies : movies
     })
+
 });
 
 app.get('/movies/:id',(req,res)=>{
